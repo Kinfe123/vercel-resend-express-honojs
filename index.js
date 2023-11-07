@@ -14,7 +14,7 @@ app.get('/' , (req , res) => {
 })
 app.post("/send", async (req, res) => {
  const {email , firstName , lastName} = await req.body
- 
+  // console.log('THe email: ', email , firstName , lastName)
   try {
     const data = await resend.emails.send({
       from: `${process.env.FROM_EMAIL_HEADER} <${process.env.FROM_EMAIL}>`,
