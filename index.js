@@ -17,12 +17,12 @@ app.get("/send", async (req, res) => {
  
   try {
     const data = await resend.emails.send({
-      from: ` <apply@arezarmada.com>`,
+      from: `${process.env.FROM_EMAIL_HEADER} <${process.env.FROM_EMAIL}>`,
       to: [email],
       subject: "Thanks For Adding Us To Your Bucket List",
       html: `<html>
       Dear ${firstName + " " + lastName } <br /> 
-      Thank you for subscribing to ArezArmada and we have received your responses and 
+      Thank you for subscribing to ${process.env.FROM_EMAIL_HEADER} and we have received your responses and 
       <br /> 
       We&apos;re thrilled to have you on board as we embark on a transformative journey of empowering  <br />
       African talent and fostering connections with American businesses. As  <br />
