@@ -18,7 +18,7 @@ app.post("/send", async (req, res) => {
   try {
     const data = await resend.emails.send({
       from: `${process.env.FROM_EMAIL_HEADER} <${process.env.FROM_EMAIL}>`,
-      to: [email],
+      to: email,
       subject: "Thanks For Adding Us To Your Bucket List",
       html: `<html>
       Dear ${firstName + " " + lastName } <br /> 
