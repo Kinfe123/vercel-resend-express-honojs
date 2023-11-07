@@ -12,7 +12,7 @@ app.use(express.json())
 app.get('/' , (req , res) => {
     res.send('The send api')
 })
-app.get("/send", async (req, res) => {
+app.post("/send", async (req, res) => {
  const {email , firstName , lastName} = await req.body
  
   try {
