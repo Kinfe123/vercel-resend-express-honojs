@@ -14,10 +14,10 @@ app.get('/' , (req , res) => {
 })
 app.get("/send", async (req, res) => {
  const {email , firstName , lastName} = await req.body
- console.log('THe reuqesy infor : ' , email , firstName , lastName)
+ 
   try {
     const data = await resend.emails.send({
-      from: "Arez Armada <apply@arezarmada.com>",
+      from: ` <apply@arezarmada.com>`,
       to: [email],
       subject: "Thanks For Adding Us To Your Bucket List",
       html: `<html>
